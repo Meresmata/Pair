@@ -13,19 +13,26 @@ class Pair {
 		type_a getFirst();
 		type_b getSecond();
 	
-		bool operator<=(Pair<type_a, type_b> secondPair);
-		bool operator<(Pair< type_a, type_b> secondPair);
 		bool operator==(Pair< type_a, type_b> secondPair);
+		bool operator!=(Pair<type_a, type_b> secondPair);
+		
+		bool operator<(Pair< type_a, type_b> secondPair);
+		bool operator<=(Pair<type_a, type_b> secondPair);
 		bool operator>(Pair< type_a, type_b> secondPair);
 		bool operator>=(Pair< type_a, type_b> secondPair);
 		
+
+		
 	//#ifdef Triple_H
 		template<typename type_x, typename type_y, typename type_z>
-		bool operator<=(Triple<type_x, type_y, type_z> compareTriple);	
+		bool operator==(Triple<type_x, type_y, type_z> compareTriple);
+		template<typename type_x, typename type_y, typename type_z>
+		bool operator!=(Triple<type_x, type_y, type_z>compareTriple);
+		
 		template<typename type_x, typename type_y, typename type_z>
 		bool operator<(Triple<type_x, type_y, type_z>compareTriple);
 		template<typename type_x, typename type_y, typename type_z>
-		bool operator==(Triple<type_x, type_y, type_z> compareTriple);
+		bool operator<=(Triple<type_x, type_y, type_z> compareTriple);
 		template<typename type_x, typename type_y, typename type_z>	
 		bool operator>(Triple<type_x, type_y, type_z> compareTriple);
 		template<typename type_x, typename type_y, typename type_z>
@@ -35,7 +42,7 @@ class Pair {
 				const type_b second;
 };
 
-#include <Pair.cpp> //musst be included because
+#include "Pair.cpp" //musst be included because
                     //we're using templates
 
 #endif
